@@ -18,7 +18,9 @@ export const ProductCard = ({ product }: { product: Product }) => {
         </CardBody>
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-tiny uppercase font-bold">{product.category}</p>
-          <small className="text-default-500">{product.rating.rate}</small>
+          <small className="text-default-500">
+            {product.rating.rate}-({product.rating.count})
+          </small>
           <h4 className="font-bold text-large line-clamp-1">{product.title}</h4>
         </CardHeader>
       </Card>
