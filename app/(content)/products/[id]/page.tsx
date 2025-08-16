@@ -8,22 +8,26 @@ import { Chip } from "@heroui/chip";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NumberInput } from "@heroui/number-input";
+import { useBasketStore } from "@/store/basketStore";
 
 export default function ProductDetailPage() {
   const { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [quantity, setQuantity] = useState<number>(1);
+  const addProductToBasket = useBasketStore(
+    (state) => state.addProductToBasket
+  );
 
   useEffect(() => {
-    const getProducts = async () => {
+    const getProduct = async () => {
       fetch(`https://fakestoreapi.com/products/${id}`)
         .then((response) => response.json())
         .then((data) => setProduct(data))
         .then(() => setLoading(false));
     };
 
-    getProducts();
+    getProduct();
   }, []);
 
   if (loading) {
@@ -157,12 +161,7 @@ export default function ProductDetailPage() {
                     color="primary"
                     size="lg"
                     className="flex-1"
-                    onPress={() => {
-                      // Add to cart logic here
-                      console.log(
-                        `${quantity} adet ${product.title} sepete eklendi`
-                      );
-                    }}
+                    onPress={() => addProductToBasket(product)}
                   >
                     Sepete Ekle
                   </Button>
