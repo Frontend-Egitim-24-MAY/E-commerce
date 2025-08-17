@@ -161,7 +161,7 @@ export default function ProductDetailPage() {
                     color="primary"
                     size="lg"
                     className="flex-1"
-                    onPress={() => addProductToBasket(product)}
+                    onPress={() => addProductToBasket(product, quantity)}
                   >
                     Sepete Ekle
                   </Button>
