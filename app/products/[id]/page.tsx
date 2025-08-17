@@ -5,7 +5,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Image } from "@heroui/image";
 import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NumberInput } from "@heroui/number-input";
 import { useBasketStore } from "@/store/basketStore";
@@ -15,6 +15,7 @@ export default function ProductDetailPage() {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [quantity, setQuantity] = useState<number>(1);
+  const router = useRouter();
   const addProductToBasket = useBasketStore(
     (state) => state.addProductToBasket
   );
@@ -171,10 +172,8 @@ export default function ProductDetailPage() {
                     variant="bordered"
                     size="lg"
                     onPress={() => {
-                      // Buy now logic here
-                      console.log(
-                        `${quantity} adet ${product.title} hemen satın al`
-                      );
+                      addProductToBasket(product, quantity);
+                      router.push("/sepet");
                     }}
                   >
                     Hemen Al

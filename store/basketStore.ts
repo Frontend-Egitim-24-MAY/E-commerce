@@ -23,7 +23,7 @@ export const useBasketStore = create<BasketState>()(
           );
           if (index > -1) {
             // ürün bulunduysa kaldırma işlemini burda yapalım
-            const newProductList = state.productList;
+            const newProductList = [...state.productList];
             newProductList.splice(index, 1);
             return { productList: newProductList };
           }
