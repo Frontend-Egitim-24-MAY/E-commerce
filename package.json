@@ -29,6 +29,7 @@
     "@heroui/system": "2.4.20",
     "@heroui/theme": "2.4.20",
     "@heroui/user": "^2.2.20",
+    "@portabletext/react": "^4.0.1",
     "@react-aria/ssr": "3.9.10",
     "@react-aria/visually-hidden": "3.8.26",
     "@sanity/icons": "^3.7.4",
