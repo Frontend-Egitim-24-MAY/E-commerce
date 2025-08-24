@@ -33,7 +33,6 @@ import {
   SignedOut,
   SignInButton,
   SignUpButton,
-  UserButton,
   useAuth,
   useUser,
 } from "@clerk/nextjs";
@@ -78,6 +77,7 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
+        <ThemeSwitch />
         <NavbarItem className="hidden md:flex">
           <Badge
             color="danger"
@@ -95,7 +95,7 @@ export const Navbar = () => {
               Sepet
             </Button>
           </Badge>
-        </NavbarItem>{" "}
+        </NavbarItem>
         <NavbarItem className="hidden sm:flex">
           <SignedOut>
             <div className="flex items-center gap-2">
