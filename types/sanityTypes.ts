@@ -21,6 +21,7 @@ type Author = {
   _id: string;
   name: string;
   slug: string;
+  image: string;
 };
 
 type Category = {
@@ -31,8 +32,9 @@ type Category = {
 export type Post = {
   _id: string;
   author: Author;
+  image: string;
   categories: Category[];
-  publishedAt: Date;
+  publishedAt: string;
   slug: string;
   title: string;
   body: PortableTextBlock;
