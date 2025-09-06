@@ -8,7 +8,7 @@ export default function BlogPage() {
   const [posts, setPosts] = useState<Post[] | null>(null);
 
   const getPosts = async () => {
-    await fetch(`${process.env.base_url}/api/posts`)
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`)
       .then((response) => response.json())
       .then((json) => setPosts(json.data));
   };
