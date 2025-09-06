@@ -1,0 +1,14 @@
+{
+  "Global": {
+    "welcome": "Welcome to Parsgen",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel"
+  },
+  "Navbar": {
+    "cart": "Cart",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "logOut": "Log Out"
+  }
+}

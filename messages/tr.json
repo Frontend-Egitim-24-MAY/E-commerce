@@ -1,0 +1,14 @@
+{
+  "Global": {
+    "welcome": "Parsgen'e hoş geldiniz",
+    "yes": "Evet",
+    "no": "Hayır",
+    "cancel": "Cancel"
+  },
+  "Navbar": {
+    "cart": "Sepet",
+    "signIn": "Giriş yap",
+    "signUp": "Kayıt ol",
+    "logOut": "Çıkış Yap"
+  }
+}

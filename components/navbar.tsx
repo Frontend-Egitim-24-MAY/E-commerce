@@ -36,12 +36,13 @@ import {
   useAuth,
   useUser,
 } from "@clerk/nextjs";
+import { useTranslations } from "next-intl";
 
 export const Navbar = () => {
   const productList = useBasketStore((state) => state.productList);
   const { user } = useUser();
   const { signOut } = useAuth();
-
+  const t = useTranslations();
   const handleSignOut = async () => {
     await signOut();
   };
@@ -52,7 +53,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <p className="font-bold text-inherit">Parsgen</p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -92,7 +93,7 @@ export const Navbar = () => {
               startContent={<HeartFilledIcon className="text-danger" />}
               variant="flat"
             >
-              Sepet
+              {t("Navbar.cart")}
             </Button>
           </Badge>
         </NavbarItem>
